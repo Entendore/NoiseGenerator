@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Qt6 Noise Generator with Multiple Noise Types + Spectrogram
+Qt6 Noise Generator (PyQt6 version)
 Dependencies:
-    pip install PySide6 numpy sounddevice pyqtgraph scipy
+    pip install PyQt6 numpy sounddevice pyqtgraph scipy
 """
 
 import sys, math, wave, threading, numpy as np, sounddevice as sd
-from PySide6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 import pyqtgraph as pg
 from scipy.signal import spectrogram
 
@@ -144,7 +144,7 @@ class WaveformWidget(QtWidgets.QWidget):
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
-        super().__init__(); self.setWindowTitle("Noise Generator — Qt6")
+        super().__init__(); self.setWindowTitle("Noise Generator — PyQt6")
         self.generator=NoiseGenerator(); self.sample_rate=44100
         self.channels=1; self.frames_per_buffer=1024
         self.stream=None; self.playing=False
